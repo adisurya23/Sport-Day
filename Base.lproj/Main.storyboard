@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gps_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lmK-Ca-WZ1">
+                                <rect key="frame" x="0.0" y="73" width="414" height="612"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="612" id="9rI-aV-rA5"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cdo-ab-mQs"/>
+                                    <outletCollection property="gestureRecognizers" destination="xpc-Ay-wg1" appends="YES" id="D0a-PB-qB7"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptz-u2-sda">
+                                <rect key="frame" x="11" y="693" width="49" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T7O-6X-sqz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWZ-CL-UZB">
+                                <rect key="frame" x="20" y="616" width="40" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Ap2-sl-MWB"/>
+                                    <constraint firstAttribute="height" constant="26" id="mCX-oB-Qnb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAz-Z2-1mn">
+                                <rect key="frame" x="20" y="43" width="30" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="showDirection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WQO-qr-Fso"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPw-Oo-zDV">
+                                <rect key="frame" x="355" y="43" width="39" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetStatusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c12-TX-6i9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzk-V7-UCJ">
+                                <rect key="frame" x="184" y="20" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGx-T5-aJP">
+                                <rect key="frame" x="186" y="693" width="42" height="30"/>
+                                <state key="normal" title="Pause"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fb-1B-T9x">
+                                <rect key="frame" x="355" y="692" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mif-Vc-Zlk">
+                                <rect key="frame" x="162.5" y="42" width="88" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="IFF-3Q-Jls"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ore-ho-lw7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lmK-Ca-WZ1" firstAttribute="centerX" secondItem="WGx-T5-aJP" secondAttribute="centerX" id="26g-gP-OWY"/>
+                            <constraint firstItem="nAz-Z2-1mn" firstAttribute="centerX" secondItem="ptz-u2-sda" secondAttribute="centerX" id="9bC-xE-53M"/>
+                            <constraint firstItem="ptz-u2-sda" firstAttribute="top" secondItem="oWZ-CL-UZB" secondAttribute="bottom" constant="51" id="ARo-Hn-uct"/>
+                            <constraint firstItem="lmK-Ca-WZ1" firstAttribute="centerX" secondItem="Mif-Vc-Zlk" secondAttribute="centerX" id="GNh-8y-DId"/>
+                            <constraint firstItem="ptz-u2-sda" firstAttribute="top" secondItem="lmK-Ca-WZ1" secondAttribute="bottom" constant="8" symbolic="YES" id="JVx-N2-G7y"/>
+                            <constraint firstItem="nAz-Z2-1mn" firstAttribute="baseline" secondItem="KPw-Oo-zDV" secondAttribute="baseline" id="MJO-Jf-2za"/>
+                            <constraint firstItem="WGx-T5-aJP" firstAttribute="top" secondItem="lmK-Ca-WZ1" secondAttribute="bottom" constant="8" symbolic="YES" id="OaK-45-3DS"/>
+                            <constraint firstItem="Mif-Vc-Zlk" firstAttribute="top" secondItem="kzk-V7-UCJ" secondAttribute="bottom" constant="1" id="Tc8-B1-t9g"/>
+                            <constraint firstItem="oWZ-CL-UZB" firstAttribute="trailing" secondItem="ptz-u2-sda" secondAttribute="trailing" id="U2U-96-hnp"/>
+                            <constraint firstItem="nAz-Z2-1mn" firstAttribute="leading" secondItem="oWZ-CL-UZB" secondAttribute="leading" id="U3G-Fi-zmX"/>
+                            <constraint firstItem="lmK-Ca-WZ1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YiV-UD-bnh"/>
+                            <constraint firstItem="KPw-Oo-zDV" firstAttribute="leading" secondItem="6Fb-1B-T9x" secondAttribute="leading" id="aMV-Nf-Fie"/>
+                            <constraint firstItem="lmK-Ca-WZ1" firstAttribute="top" secondItem="Mif-Vc-Zlk" secondAttribute="bottom" constant="1" id="b2u-I0-tm1"/>
+                            <constraint firstItem="KPw-Oo-zDV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gT3-GP-kO2"/>
+                            <constraint firstItem="6Fb-1B-T9x" firstAttribute="top" secondItem="lmK-Ca-WZ1" secondAttribute="bottom" constant="7" id="kS4-Gb-PVN"/>
+                            <constraint firstItem="lmK-Ca-WZ1" firstAttribute="centerX" secondItem="kzk-V7-UCJ" secondAttribute="centerX" id="kfJ-ZY-I16"/>
+                            <constraint firstAttribute="trailing" secondItem="lmK-Ca-WZ1" secondAttribute="trailing" id="kgF-Jm-rRv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nAz-Z2-1mn" secondAttribute="leading" id="ngM-uS-dnZ"/>
+                            <constraint firstItem="lmK-Ca-WZ1" firstAttribute="top" secondItem="KPw-Oo-zDV" secondAttribute="bottom" id="rBa-B7-ITE"/>
+                            <constraint firstItem="nAz-Z2-1mn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="taQ-fy-aYe"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="liveDistance" destination="Mif-Vc-Zlk" id="QVn-7Y-nKr"/>
+                        <outlet property="myMapView" destination="lmK-Ca-WZ1" id="GZH-Wb-u4y"/>
+                        <outlet property="timerLabel" destination="oWZ-CL-UZB" id="Pw2-Mq-VSG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xpc-Ay-wg1">
+                    <connections>
+                        <action selector="addPin:" destination="BYZ-38-t0r" id="mpi-q0-8Vj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="162" y="368"/>
+        </scene>
+    </scenes>
+</document>
